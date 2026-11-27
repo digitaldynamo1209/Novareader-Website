@@ -1,10 +1,11 @@
-hmm // ==========================================================================
+// ==========================================================================
 // NovaReader Product Website Client Logic
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Interactive 3D Bookshelf Demo Inspector
   const books = document.querySelectorAll('.demo-book');
+  const inspectorCard = document.getElementById('demo-inspector');
   const inspFmt = document.getElementById('insp-fmt');
   const inspSize = document.getElementById('insp-size');
   const inspTitle = document.getElementById('insp-title');
@@ -12,15 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   books.forEach(book => {
     book.addEventListener('click', () => {
-      // Remove active/highlight from others
-      books.forEach(b => b.style.outline = 'none');
-      book.style.outline = '2px solid #d4af37';
-      book.style.outlineOffset = '3px';
+      books.forEach(b => b.classList.remove('is-selected'));
+      book.classList.add('is-selected');
 
       const title = book.getAttribute('data-title');
       const format = book.getAttribute('data-format');
       const size = book.getAttribute('data-size');
       const folder = book.getAttribute('data-folder');
+
+      if (inspectorCard) {
+        inspectorCard.classList.remove('is-updating');
+        void inspectorCard.offsetWidth; // restart lightweight CSS pulse
+        inspectorCard.classList.add('is-updating');
+      }
 
       inspTitle.textContent = title;
       inspFmt.textContent = format;
@@ -103,28 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showDownloadNotification(platform) {
     const toast = document.createElement('div');
-    toast.style.position = 'fixed';
-    toast.style.bottom = '24px';
-    toast.style.right = '24px';
-    toast.style.background = '#1e140d';
-    toast.style.border = '1px solid #d4af37';
-    toast.style.color = '#f5eedf';
-    toast.style.padding = '14px 22px';
-    toast.style.borderRadius = '10px';
-    toast.style.boxShadow = '0 10px 30px rgba(0,0,0,0.8)';
-    toast.style.zIndex = '9999';
-    toast.style.fontFamily = 'Plus Jakarta Sans, sans-serif';
-    toast.style.fontSize = '0.9rem';
-    toast.style.display = 'flex';
-    toast.style.alignItems = 'center';
-    toast.style.gap = '10px';
+    toast.className = 'nova-toast';
     toast.innerHTML = `<span>✨</span><span>Starting download of <strong>NovaReader for ${platform}</strong>...</span>`;
 
     document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('is-visible'));
     setTimeout(() => {
-      toast.style.transition = 'opacity 0.4s ease';
-      toast.style.opacity = '0';
-      setTimeout(() => toast.remove(), 400);
+      toast.classList.remove('is-visible');
+      setTimeout(() => toast.remove(), 350);
     }, 3800);
   }
 
@@ -135,4 +126,31 @@ document.addEventListener('DOMContentLoaded', () => {
   androidButtons.forEach(btn => {
     btn.addEventListener('click', () => showDownloadNotification('Android'));
   });
+
+  // 4. Lightweight Offline Scroll Reveal (IntersectionObserver)
+  const revealTargets = document.querySelectorAll(
+    '.feature-card, .spec-box, .faq-item, .formats-showcase-grid > div'
+  );
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if ('IntersectionObserver' in window && !reducedMotion && revealTargets.length > 0) {
+    revealTargets.forEach((el, idx) => {
+      el.classList.add('reveal-on-scroll');
+      el.style.transitionDelay = `${(idx % 6) * 55}ms`;
+    });
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -24px 0px' }
+    );
+
+    revealTargets.forEach(el => observer.observe(el));
+  }
 });
