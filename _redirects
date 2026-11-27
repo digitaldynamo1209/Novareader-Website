@@ -1,8 +1,8 @@
 # Netlify Clean URL Redirects & Short Links for NovaReader
 /privacy                              /privacy.html                                                                                                      200
 /terms                                /terms.html                                                                                                        200
-/download/windows                     https://github.com/digitaldynamo1209/Novareader-Website/releases/download/v.1.0.0/NovaReader-Windows-x64.zip       302
+/download/windows                     https://github.com/digitaldynamo1209/Novareader-Website/releases/download/v1.0.0/NovaReader-Windows-x64.zip       302
 /download/android                     /NovaReader.apk                                                                                                    302
-/downloads/NovaReader-Windows-x64.zip https://github.com/digitaldynamo1209/Novareader-Website/releases/download/v.1.0.0/NovaReader-Windows-x64.zip       302
+/downloads/NovaReader-Windows-x64.zip https://github.com/digitaldynamo1209/Novareader-Website/releases/download/v1.0.0/NovaReader-Windows-x64.zip       302
 /downloads/NovaReader.apk             /NovaReader.apk                                                                                                    302
 /downloads/NovaReader_Overview.pdf    /NovaReader_Overview.pdf                                                                                           302
