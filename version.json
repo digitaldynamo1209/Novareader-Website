@@ -6,14 +6,14 @@
   "platforms": {
     "windows": {
       "latestVersion": "1.0.2",
-      "downloadUrl": "https://novareader.netlify.app/downloads/NovaReader-Windows-x64.zip",
+      "downloadUrl": "https://github.com/digitaldynamo1209/Novareader-Website/releases/download/v.1.0.0/NovaReader-Windows-x64.zip",
       "portableZip": true,
       "minSupportedVersion": "1.0.0"
     },
     "android": {
       "latestVersion": "2.0.2",
       "versionCode": 4,
-      "downloadUrl": "https://novareader.netlify.app/downloads/NovaReader.apk",
+      "downloadUrl": "https://novareader.netlify.app/NovaReader.apk",
       "minSupportedVersion": "1.0.0"
     }
   }
