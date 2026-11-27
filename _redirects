@@ -1,0 +1,5 @@
+# Netlify Clean URL Redirects & Short Links for NovaReader
+/privacy            /privacy.html                       200
+/terms              /terms.html                         200
+/download/windows   /downloads/NovaReader-Windows-x64.zip  302
+/download/android   /downloads/NovaReader.apk           302

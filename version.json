@@ -1,0 +1,20 @@
+{
+  "versionCode": 4,
+  "versionName": "2.0.2",
+  "releaseDate": "2026-11-04",
+  "releaseNotes": "Enabled persistent authentication across both Windows and Android: users remain signed in permanently on their devices.",
+  "platforms": {
+    "windows": {
+      "latestVersion": "1.0.2",
+      "downloadUrl": "https://novareader.netlify.app/downloads/NovaReader-Windows-x64.zip",
+      "portableZip": true,
+      "minSupportedVersion": "1.0.0"
+    },
+    "android": {
+      "latestVersion": "2.0.2",
+      "versionCode": 4,
+      "downloadUrl": "https://novareader.netlify.app/downloads/NovaReader.apk",
+      "minSupportedVersion": "1.0.0"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Netlify Custom Headers for NovaReader
+# Ensure in-app update checks are always fresh and never cached stale
+/version.json
+  Cache-Control: public, max-age=0, must-revalidate
+  Access-Control-Allow-Origin: *
+
+# Ensure proper Android APK MIME type and prompt instant download
+/downloads/*.apk
+  Content-Type: application/vnd.android.package-archive
+  Content-Disposition: attachment
+  Access-Control-Allow-Origin: *
+
+# Ensure proper Windows Portable ZIP MIME type
+/downloads/*.zip
+  Content-Type: application/zip
+  Content-Disposition: attachment
+  Access-Control-Allow-Origin: *
+

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaReader — Physical Library Experience on Windows & Android</title>
+  <meta name="description" content="NovaReader transforms your scattered EPUB, PDF, MOBI, and comic files into a realistic 3D wooden bookshelf. Download free for Windows and Android.">
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- Social Media & Open Graph (Rich Previews on WhatsApp, X/Twitter, Discord, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NovaReader — A Physical Study for Your Digital Reads">
+  <meta property="og:description" content="Turn your scattered EPUB, PDF, and MOBI files into a tactile 3D wooden bookshelf. Free for Windows & Android.">
+  <meta property="og:image" content="logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NovaReader — Realistic Bookshelf on Windows & Android">
+  <meta name="twitter:description" content="12 universal book formats, multi-folder monitoring, and realistic 3D physical book spines.">
+  <meta name="twitter:image" content="logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-box">
+          <img src="logo.png" alt="NovaReader" class="logo-img" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">NovaReader</span>
+          <span class="brand-tag">Study & Bookshelf</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#bookshelf-demo">Interactive Shelf</a>
+        <a href="#formats">12 Formats</a>
+        <a href="#downloads" class="nav-highlight">Downloads</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#downloads" class="btn-nav-download">
+          <span>Get NovaReader</span>
+          <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <div class="mobile-nav-header">
+      <div class="brand-text">
+        <span class="brand-name">NovaReader</span>
+        <span class="brand-tag">Study & Bookshelf</span>
+      </div>
+      <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close navigation menu">&times;</button>
+    </div>
+    <nav class="mobile-drawer-links">
+      <a href="#features" class="mobile-nav-link">Features</a>
+      <a href="#bookshelf-demo" class="mobile-nav-link">Interactive Shelf</a>
+      <a href="#formats" class="mobile-nav-link">12 Formats</a>
+      <a href="#downloads" class="mobile-nav-link nav-highlight">Downloads</a>
+      <a href="#faq" class="mobile-nav-link">FAQ & Updates</a>
+      <a href="privacy.html" class="mobile-nav-link">Privacy Policy</a>
+      <a href="terms.html" class="mobile-nav-link">Terms & Conditions</a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="#downloads" class="btn-mobile-download" id="mobileDrawerDownload">
+        <span>Get NovaReader Free</span>
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-gold"></div>
+
+    <div class="container hero-container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Version 2.0 Released for Windows & Android</span>
+      </div>
+
+      <h1 class="hero-title">
+        A Physical Study,<br>
+        <span class="title-gradient">For All Your Digital Reads.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Say goodbye to messy file folders. NovaReader scans your laptop and phone for 
+        <strong>EPUB, PDF, MOBI, and comic files</strong>, letting you curate your personal library 
+        and display them on realistic 3D mahogany and oak bookshelves.
+      </p>
+
+      <!-- Dual Download Hero CTAs -->
+      <div class="hero-cta-group" id="downloads">
+        <!-- Windows Download Card Button -->
+        <a href="downloads/NovaReader-Windows-x64.zip" download class="cta-card cta-windows" id="btn-hero-windows">
+          <div class="cta-icon-box">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.901-1.799"/>
+            </svg>
+          </div>
+          <div class="cta-content">
+            <span class="cta-platform">Download for Windows</span>
+            <span class="cta-detail">64-bit Laptop / Desktop • Portable .ZIP (158 MB)</span>
+          </div>
+          <div class="cta-arrow-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Android Download Card Button -->
+        <a href="downloads/NovaReader.apk" download class="cta-card cta-android" id="btn-hero-android">
+          <div class="cta-icon-box">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.4111 13.8533 8.0805 12 8.0805c-1.8533 0-3.5902.3306-5.1367.8692L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+            </svg>
+          </div>
+          <div class="cta-content">
+            <span class="cta-platform">Download for Android</span>
+            <span class="cta-detail">Phones & Tablets • Standalone .APK (16.8 MB)</span>
+          </div>
+          <div class="cta-arrow-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <div class="hero-auxiliary">
+        <span>No subscription • 100% Offline • Free forever</span>
+        <span class="aux-dot">•</span>
+        <a href="downloads/NovaReader_Overview.pdf" target="_blank" class="link-pdf-spec">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          Read the Product Overview (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 3D Bookshelf Preview Section -->
+  <section class="bookshelf-section" id="bookshelf-demo">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-tag">LIVE INTERACTION DEMO</span>
+        <h2 class="section-title">Experience the Real Wooden Study</h2>
+        <p class="section-desc">Hover over any book to lift it from the shelf. Click any volume to inspect its details and format badge.</p>
+      </div>
+
+      <!-- The 3D Wooden Shelf Frame -->
+      <div class="wooden-wall-case">
+        <div class="shelf-mobile-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Swipe sideways to browse shelves</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+        <div class="shelf-books-row" id="demo-shelf-books">
+          <!-- Book 1: Crimson -->
+          <div class="demo-book book-crimson" data-title="Dune: Deluxe Chronicle" data-format="EPUB" data-size="4.2 MB" data-folder="C:\Users\Downloads">
+            <div class="book-spine-crease"></div>
+            <div class="book-emboss-border"></div>
+            <div class="book-top">
+              <span class="book-fmt fmt-epub">EPUB</span>
+              <span class="book-dots">⋮</span>
+            </div>
+            <div class="book-title-area">
+              <h3>Dune: Deluxe Chronicle</h3>
+              <p class="book-author">Frank Herbert</p>
+            </div>
+            <div class="book-bot">
+              <span class="book-pages">4.2 MB</span>
+              <span class="book-tag-icon">❦</span>
+            </div>
+          </div>
+
+          <!-- Book 2: Oxford Navy -->
+          <div class="demo-book book-navy" data-title="Clean Code & Architecture" data-format="PDF" data-size="12.8 MB" data-folder="C:\Users\Documents\Books">
+            <div class="book-spine-crease"></div>
+            <div class="book-emboss-border"></div>
+            <div class="book-top">
+              <span class="book-fmt fmt-pdf">PDF</span>
+              <span class="book-dots">⋮</span>
+            </div>
+            <div class="book-title-area">
+              <h3>Clean Code & Architecture</h3>
+              <p class="book-author">Robert C. Martin</p>
+            </div>
+            <div class="book-bot">
+              <span class="book-pages">12.8 MB</span>
+              <span class="book-tag-icon">❦</span>
+            </div>
+          </div>
+
+          <!-- Book 3: Emerald Cloth -->
+          <div class="demo-book book-emerald" data-title="The Lord of the Rings: Complete" data-format="MOBI" data-size="8.6 MB" data-folder="C:\Users\Downloads">
+            <div class="book-spine-crease"></div>
+            <div class="book-emboss-border"></div>
+            <div class="book-top">
+              <span class="book-fmt fmt-mobi">MOBI</span>
+              <span class="book-dots">⋮</span>
+            </div>
+            <div class="book-title-area">
+              <h3>The Lord of the Rings: Complete</h3>
+              <p class="book-author">J.R.R. Tolkien</p>
+            </div>
+            <div class="book-bot">
+              <span class="book-pages">8.6 MB</span>
+              <span class="book-tag-icon">❦</span>
+            </div>
+          </div>
+
+          <!-- Book 4: Royal Amber -->
+          <div class="demo-book book-amber" data-title="Atomic Habits: Micro Changes" data-format="AZW3" data-size="3.1 MB" data-folder="C:\Users\Desktop\Reading">
+            <div class="book-spine-crease"></div>
+            <div class="book-emboss-border"></div>
+            <div class="book-top">
+              <span class="book-fmt fmt-azw">AZW3</span>
+              <span class="book-dots">⋮</span>
+            </div>
+            <div class="book-title-area">
+              <h3>Atomic Habits: Micro Changes</h3>
+              <p class="book-author">James Clear</p>
+            </div>
+            <div class="book-bot">
+              <span class="book-pages">3.1 MB</span>
+              <span class="book-tag-icon">❦</span>
+            </div>
+          </div>
+
+          <!-- Book 5: Deep Plum -->
+          <div class="demo-book book-plum" data-title="Spider-Man: Blue Omnibus" data-format="CBZ" data-size="94.5 MB" data-folder="D:\Comics">
+            <div class="book-spine-crease"></div>
+            <div class="book-emboss-border"></div>
+            <div class="book-top">
+              <span class="book-fmt fmt-cbz">CBZ</span>
+              <span class="book-dots">⋮</span>
+            </div>
+            <div class="book-title-area">
+              <h3>Spider-Man: Blue Omnibus</h3>
+              <p class="book-author">Jeph Loeb & Tim Sale</p>
+            </div>
+            <div class="book-bot">
+              <span class="book-pages">94.5 MB</span>
+              <span class="book-tag-icon">❦</span>
+            </div>
+          </div>
+
+          <!-- Book 6: Espresso Leather -->
+          <div class="demo-book book-espresso" data-title="Meditations: Marcus Aurelius" data-format="TXT" data-size="480 KB" data-folder="C:\Users\Documents">
+            <div class="book-spine-crease"></div>
+            <div class="book-emboss-border"></div>
+            <div class="book-top">
+              <span class="book-fmt fmt-txt">TXT</span>
+              <span class="book-dots">⋮</span>
+            </div>
+            <div class="book-title-area">
+              <h3>Meditations: Marcus Aurelius</h3>
+              <p class="book-author">Gregory Hays Trans.</p>
+            </div>
+            <div class="book-bot">
+              <span class="book-pages">480 KB</span>
+              <span class="book-tag-icon">❦</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Mahogany Timber Plank -->
+        <div class="demo-shelf-plank">
+          <div class="plank-top"></div>
+          <div class="plank-front">
+            <div class="brass-groove"></div>
+          </div>
+          <div class="plank-cast-shadow"></div>
+        </div>
+      </div>
+
+      <!-- Interactive Inspector Box -->
+      <div class="inspector-card" id="demo-inspector">
+        <div class="inspector-badge-row">
+          <span class="inspector-format" id="insp-fmt">EPUB</span>
+          <span class="inspector-size" id="insp-size">4.2 MB</span>
+          <span class="inspector-hint">✨ Clicked Book Live Information</span>
+        </div>
+        <h4 class="inspector-title" id="insp-title">Dune: Deluxe Chronicle</h4>
+        <p class="inspector-path" id="insp-path">Source: C:\Users\Downloads\Dune.epub</p>
+        <div class="inspector-actions">
+          <button class="btn-inspector-action" onclick="alert('In NovaReader, this immediately launches your default reader app (e.g. Acrobat, Kindle, ReadEra, SumatraPDF)!')">
+            ▶ Open in Default Reading App
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-tag">BUILT FOR BOOK LOVERS</span>
+        <h2 class="section-title">Everything You Need to Reclaim Your Books</h2>
+        <p class="section-desc">Designed based on direct reader feedback: effortless organization, folder monitoring, and zero clutter.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              <line x1="12" y1="11" x2="12" y2="17"></line>
+              <line x1="9" y1="14" x2="15" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Multi-Folder Monitoring</h3>
+          <p>Scan 1, 2, or as many folders as you need. Whether your books are in <code>Downloads</code>, <code>Documents</code>, or an external hard drive, NovaReader monitors them all automatically.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 11 12 14 22 4"></polyline>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <h3>Intake Review Checklist</h3>
+          <p>You decide what reaches your shelves. When new files are discovered, tick what you want to keep, and untick what you don't. Unticked files are excluded so your shelves stay pristine.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </div>
+          <h3>Launch Your Favorite Reader</h3>
+          <p>NovaReader is your elegant library hub. Clicking any book immediately opens it in your preferred app (ReadEra, Adobe Acrobat, Kindle, SumatraPDF, Calibre, or Word).</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Native Desktop & Mobile</h3>
+          <p>Engineered for both Windows laptops and Android devices. Clean, responsive layouts that never look crowded on mobile phones, tablets, or widescreen monitors.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>100% Offline & Private</h3>
+          <p>No tracking, no cloud telemetry, and no account signup. Your books stay right on your device where they belong, completely secure and private.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <h3>Instant Full-Text Search</h3>
+          <p>Find any book in a fraction of a second across titles, authors, file extensions, and folder paths with zero index lag.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 Formats Section -->
+  <section class="formats-section" id="formats">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-tag">COMPREHENSIVE COMPATIBILITY</span>
+        <h2 class="section-title">12 Universal Document & Book Formats</h2>
+        <p class="section-desc">Toggle any format on or off in Settings. NovaReader collects only the file types you want.</p>
+      </div>
+
+      <div class="formats-showcase-grid">
+        <div class="fmt-card"><span class="fmt-ext">.EPUB</span><span class="fmt-label">E-Books & Novels</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.PDF</span><span class="fmt-label">Documents & Manuals</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.MOBI</span><span class="fmt-label">Kindle Standard</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.AZW</span><span class="fmt-label">Amazon E-Book</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.AZW3</span><span class="fmt-label">Kindle Format 8</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.FB2</span><span class="fmt-label">FictionBook XML</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.CBZ</span><span class="fmt-label">Comic Book ZIP</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.CBR</span><span class="fmt-label">Comic Book RAR</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.DJVU</span><span class="fmt-label">Scanned Literature</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.TXT</span><span class="fmt-label">Plain Text Notes</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.DOCX</span><span class="fmt-label">Word Documents</span></div>
+        <div class="fmt-card"><span class="fmt-ext">.DOC</span><span class="fmt-label">Legacy Word Docs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads Comparison Cards -->
+  <section class="download-specs-section">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-tag">CHOOSE YOUR PLATFORM</span>
+        <h2 class="section-title">Download NovaReader for Your Devices</h2>
+        <p class="section-desc">Get the standalone, ready-to-run release without complicated installation steps.</p>
+      </div>
+
+      <div class="specs-grid">
+        <!-- Windows Box -->
+        <div class="spec-box">
+          <div class="spec-header">
+            <div class="spec-icon win-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.901-1.799"/>
+              </svg>
+            </div>
+            <div>
+              <h3>NovaReader for Windows</h3>
+              <p class="spec-ver">Version 1.0.0 • 64-bit</p>
+            </div>
+          </div>
+          
+          <ul class="spec-list">
+            <li>✓ Windows 10 & Windows 11 Compatible</li>
+            <li>✓ Portable Package: Extract and run <code>NovaReader.exe</code></li>
+            <li>✓ Native multi-folder recursive file scanner</li>
+            <li>✓ Seamless external app delegation (Acrobat, Kindle, Sumatra)</li>
+            <li>✓ Size: 158 MB (Compressed Portable ZIP)</li>
+          </ul>
+
+          <div class="spec-action">
+            <a href="downloads/NovaReader-Windows-x64.zip" download class="btn-spec-download btn-win">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download for Windows (.ZIP)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Android Box -->
+        <div class="spec-box">
+          <div class="spec-header">
+            <div class="spec-icon android-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.4111 13.8533 8.0805 12 8.0805c-1.8533 0-3.5902.3306-5.1367.8692L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+              </svg>
+            </div>
+            <div>
+              <h3>NovaReader for Android</h3>
+              <p class="spec-ver">Version 2.0.0 • Mobile & Tablet</p>
+            </div>
+          </div>
+          
+          <ul class="spec-list">
+            <li>✓ Android 8.0 (Oreo) through Android 15+</li>
+            <li>✓ Adaptive responsive layout for phones & tablets</li>
+            <li>✓ Android SAF persistent multi-folder permissions</li>
+            <li>✓ Delegates reading via FileProvider to ReadEra, Moon+, etc.</li>
+            <li>✓ Size: 16.8 MB (Standalone APK)</li>
+          </ul>
+
+          <div class="spec-action">
+            <a href="downloads/NovaReader.apk" download class="btn-spec-download btn-android">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download for Android (.APK)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="section-title">Answers to Common Questions</h2>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does NovaReader move or modify my original files?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. NovaReader never modifies, renames, or moves your files on disk. It indexes and presents them on your bookshelf, launching them in their original location when you want to read them.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the Discovery & Intake Checklist work?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Whenever you scan your folders, newly discovered documents are listed with checkboxes. You can tick the books you want to place on your shelves and untick the rest. Unticked books are remembered and excluded, keeping your library clean.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I change which reading app opens my books?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. NovaReader delegates to your system default application. On Windows, you can right-click any file format in Explorer to set your default reader (e.g. SumatraPDF, Adobe Acrobat, or Kindle). On Android, your device will prompt you to choose your preferred reading app (e.g. ReadEra, Moon+ Reader).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do I run NovaReader on Windows after downloading?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Simply download <code>NovaReader-Windows-x64.zip</code>, right-click and choose <strong>Extract All</strong>, then double-click <code>NovaReader.exe</code>. No installation wizards or administrator rights are required!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How will I receive new updates if a new version is released?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>NovaReader checks for updates upon launch or via <strong>Settings ⚙️ &rarr; Check for Updates</strong>. On <strong>Android</strong>, tapping the update prompt downloads and installs the updated APK in seconds without wiping your shelves or preferences. On <strong>Windows</strong>, the app notifies you when a new build is ready, allowing you to update in one click or extract the updated release zip right over your current directory.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">NovaReader</span>
+        <p>A physical study and bookshelf for all your digital documents.</p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="downloads/NovaReader-Windows-x64.zip" download>Windows Release</a>
+        <a href="downloads/NovaReader.apk" download>Android APK</a>
+        <a href="downloads/NovaReader_Overview.pdf" target="_blank">PDF Overview</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NovaReader Project. Free and open offline reader hub.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
